@@ -8,7 +8,7 @@ from django.views.generic import (
     DeleteView
 )
 from .forms import SignUpForm , LoginForm
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import ToDoList , ToDoItem
 from django.urls import reverse , reverse_lazy
@@ -146,3 +146,6 @@ class ItemDelete(LoginRequiredMixin,DeleteView):
         context=super().get_context_data(**kwargs)
         context["todo_list"]=self.object.todo_list
         return context
+    
+class logout(LogoutView):
+    template_name="todo_app/logout.html"

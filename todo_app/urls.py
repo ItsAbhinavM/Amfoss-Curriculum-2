@@ -36,4 +36,5 @@ urlpatterns = [
         views.ItemDelete.as_view(),
         name="item-delete",
     ),
+    path("logout",views.logout.as_view(),name='logout'),
 ]

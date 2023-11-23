@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content%}
+
+<h1>You have successfully logged-out </h1>
+<p>To continue , please login here </p>
+
+<input
+value="Login"
+type="Button"
+onclick="location.href='{% url 'login'%}'"/>
+
+{% endblock%}
